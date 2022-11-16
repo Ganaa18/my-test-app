@@ -9,7 +9,13 @@ const FormInput = (props) => {
         </label>
       </Col>
       <Col span={18}>
-        <Input placeholder={props.placeholder} type={props.type} />
+        <Input
+          placeholder={props.placeholder}
+          type={props.type}
+          onChange={(event) => {
+            props.onChange(event, props.labelName);
+          }}
+        />
       </Col>
     </Row>
   );
