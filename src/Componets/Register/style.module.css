@@ -1,0 +1,28 @@
+.Register {
+  margin-top: 50px;
+  background-color: #fbc118;
+}
+.marginTop {
+  margin-top: 80px;
+}
+.Btn {
+  background-color: #259745;
+  width: 85px;
+}
+.Btn:hover {
+  color: #fff;
+  border: 1px solid black;
+  background-color: #259745;
+}
+
+.Form {
+  width: 400px;
+  height: 500px;
+  margin: auto;
+  margin-top: 150px;
+  padding: 30px;
+  box-sizing: border-box;
+  border: 1px solid #fafafa;
+  border-radius: 5px;
+  background-color: #fafafa;
+}
