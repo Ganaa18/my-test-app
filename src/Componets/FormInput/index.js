@@ -1,4 +1,5 @@
 import { Row, Col, Input } from "antd";
+
 import css from "./style.module.css";
 const FormInput = (props) => {
   return (

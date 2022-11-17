@@ -1,4 +1,4 @@
-import { Table } from "antd";
+import { Table, Spin } from "antd";
 import { useEffect, useState } from "react";
 import css from "./style.module.css";
 import axios from "axios";
@@ -41,11 +41,12 @@ const columns = [
 ];
 const Users = () => {
   const [users, setUsers] = useState([]);
-
+  const [loading, setLoading] = useState(true);
   useEffect(() => {
     axios
       .get("https://my-test-app-e26cd-default-rtdb.firebaseio.com/users.json")
       .then((response) => {
+        setLoading(false);
         const usersFromDB = [];
         const arr = Object.entries(response.data);
         arr.forEach((el) => {
@@ -59,12 +60,14 @@ const Users = () => {
       });
   });
   return (
-    <Table
-      columns={columns}
-      className={css.Table}
-      dataSource={users}
-      pagination={false}
-    />
+    <Spin spinning={loading}>
+      <Table
+        columns={columns}
+        className={css.Table}
+        dataSource={users}
+        pagination={false}
+      />
+    </Spin>
   );
 };
 
